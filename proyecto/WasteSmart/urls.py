@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^perdidaMonetaria/', perdidaMonetaria, name='perdidaMonetaria'),
     url(r'^valorRecuperacion/', valorRecuperacion, name='valorRecuperacion'),
     url(r'^', index, name='index'),
+    url(r'^listaEmpresa/(?P<codigo>[^/]+)/$', listaEmpresa, name='listaEmpresa'),
     
 ]

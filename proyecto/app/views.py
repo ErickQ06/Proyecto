@@ -9,7 +9,6 @@ from django.urls import *
 
 def verMaterial(request):
 	material = tipoMaterial.objects.all()
-
 	return render(request, 'verMaterial.html', {'material':material, })
 
 def verEmpresa(request):
@@ -25,6 +24,10 @@ def perdidaMonetaria(request):
 
 def index(request):
 	return render(request, 'index.html')
+
+def listaEmpresa(request):
+	listaEmpresas = empresa.objects.filter(tipMaterial_id=mat)
+	return render(request, 'listaEmpresa.html')
 
 
 	

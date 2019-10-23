@@ -16,6 +16,7 @@
       <th scope="col"><b>Nombre</b></th>
       
       <th scope="col"><b>Precio Compra</b></th>
+      <th scope="col"><b>Empresas</b></th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +25,7 @@
      <td>{{material.codigo}}</td>
      <td>{{material.nombre}}</td>
      <td>${{material.precio}}</td>
+     <td><a class="btn btn-primary" href="{% url 'listaEmpresa' codigo=material.codigo %}"></a></td>
      
      
     </tr>
