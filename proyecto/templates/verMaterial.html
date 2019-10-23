@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<br>
+<br>
+<h1 align="center"><b>Listado de Materiales</b></h1>
+<br>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><b>Codigo</b></th>
+      <th scope="col"><b>Nombre</b></th>
+      
+      <th scope="col"><b>Precio Compra</b></th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for material in material%}
+    <tr>
+     <td>{{material.codigo}}</td>
+     <td>{{material.nombre}}</td>
+     <td>${{material.precio}}</td>
+     
+     
+    </tr>
+
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+
+{% endblock %}
