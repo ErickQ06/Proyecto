@@ -26,7 +26,10 @@ urlpatterns = [
     url(r'^verEmpresa/', verEmpresa, name='verEmpresa'),
     url(r'^perdidaMonetaria/', perdidaMonetaria, name='perdidaMonetaria'),
     url(r'^valorRecuperacion/', valorRecuperacion, name='valorRecuperacion'),
+#    url(r'^listaEmpresa/(?P<codigo>[^/]+)/$', listaEmpresa, name='listaEmpresa'),
+    re_path(r'^listaEmpresa/(?P<codigo>\d+)', listaEmpresa, name='listaEmpresa'),
+    re_path(r'^informacionEmpresa/(?P<emp>\d+)', informacionEmpresa, name='informacionEmpresa'),
     url(r'^', index, name='index'),
-    url(r'^listaEmpresa/(?P<codigo>[^/]+)/$', listaEmpresa, name='listaEmpresa'),
+    
     
 ]

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<h1 align="center"><b>Listado de Empresas</b></h1>
+<br>
+<div style="margin: 20px;">
+<div class="table-responsive">
+<table class="table table-hover table-bordered ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><b>Nombre</b></th>
+      <th scope="col"><b>Telefono</b></th>
+      <th scope="col"><b>Direccion</b></th>
+      <th scope="col"><b>Email</b></th>
+      <th scope="col"><b>Web</b></th>
+      <th scope="col"><b>Contacto</b></th>
+      <th scope="col"><b>Servicios</b></th>
+      <th scope="col"><b>Materiales</b></th>
+    </tr>
+  </thead>
+  <tbody >
+  	{% for empresa in lisEmp %}
+    <tr>
+     <td>{{empresa.nombreEmpresa}}</td>
+     <td>{{empresa.telefono}}</td>
+     <td>{{empresa.direccion}}</td>
+     <td>{{empresa.email}}</td>
+     <td>{{empresa.web}}</td>
+     <td>{{empresa.contacto}}</td>
+     <td>{{empresa.servicio}}</td>
+     <td>{{empresa.materiales}}</td>
+     
+     
+    </tr>
+
+    {% endfor %}
+    
+  </tbody>
+</table>
+</div>
+</div>
+
+{% endblock %}

@@ -20,11 +20,11 @@
     </tr>
   </thead>
   <tbody>
-  	{% for material in material%}
+  	{% for empresa in listaEmpresas%}
     <tr>
-     <td>{{empresa.nombre}}</td>
+     <td>{{empresa.nombreEmpresa}}</td>
      <td>{{empresa.telefono}}</td>
-     <td><a class="btn btn-primary" href="{%url 'informacionEmpresa' emp=empresa.id%}"></a></td>
+     <td><a class="btn btn-primary" href="{% url 'informacionEmpresa' emp=empresa.id %}">Informacion</a></td>
      
      
     </tr>

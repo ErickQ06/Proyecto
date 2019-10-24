@@ -25,9 +25,13 @@ def perdidaMonetaria(request):
 def index(request):
 	return render(request, 'index.html')
 
-def listaEmpresa(request):
-	listaEmpresas = empresa.objects.filter(tipMaterial_id=mat)
-	return render(request, 'listaEmpresa.html')
+def listaEmpresa(request, codigo):
+	listaEmpresas = empresa.objects.filter(codigoMat=codigo)
+	return render(request, 'listaEmpresa.html', {'listaEmpresas': listaEmpresas, })
+
+def informacionEmpresa(request, emp):
+	lisEmp = empresa.objects.filter(id=emp)
+	return render(request, 'informacionEmpresa.html', {'lisEmp': lisEmp, })
 
 
 	
