@@ -17,7 +17,9 @@ def verEmpresa(request):
 	return render(request, 'verEmpresa.html', {'empresas':empresas, })
 
 def valorRecuperacion(request):
-	return render(request, 'valorRecuperacion.html')
+	materiales = tipoMaterial.objects.all()
+	precio = tipoMaterial.objects.all()
+	return render(request, 'valorRecuperacion.html', {'materiales': materiales, 'precio': precio,})
 
 def perdidaMonetaria(request):
 	return render(request, 'perdidaMonetaria.html')
