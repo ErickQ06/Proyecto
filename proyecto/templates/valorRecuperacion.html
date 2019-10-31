@@ -1,9 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br>
+<h1 style="text-align: center;"><b> Calculo de valores de recuperación y pérdidas monetarias</b></h1>
+<br>
+<h4 style="margin:20px;;">Seleccione el material que desea valorar</h4>
+{% csrf_token %}
+<div style="width: 90%; margin: 20px; margin-left: auto; margin-right: auto;" class="form-group">
+<form method="POST">
+   
+<select style="text-align-last: center;" class="form-control form-control-lg" name="item_name">
+{% for materiales in materiales %}
+<option style="text-align-last: center;" value="{{materiales.id}}">
+   {{ materiales.nombre }} | ${{materiales.precio}}
+</option>
 
+{% endfor %}
 
+</select>
+</form>
+</div>
 
-<h2>VR</h2>
+<div style="width: 90%; margin: 20px; margin-left: auto; margin-right: auto;" class="form-group">
+   <br>
+      <form>
+         <label for="peso"> Ingrese el peso de su desperdicio o desecho  </label>
+  <input class="form-control form-control-lg" id="peso" name="peso" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo">
+  <br>
+  <label for="MP"> Ingrese el costo de su materia prima  </label>
+  <input class="form-control form-control-lg" id="peso" name="MP" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo">
 
+   </form>
+</div>
+<br>
+<br>
+<br>
+<br>
 {% endblock %}
