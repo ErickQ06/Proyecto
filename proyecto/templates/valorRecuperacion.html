@@ -2,22 +2,23 @@
 
 {% block content %}
 <br>
-<h1 style="text-align: center;"><b> Calculo de valores de recuperación y pérdidas monetarias</b></h1>
+<h1 style="text-align: center;"><b> Cálculo de valores de recuperación y pérdidas monetarias</b></h1>
 <br>
 <h4 style="margin:20px;;">Seleccione el material que desea valorar</h4>
 {% csrf_token %}
 <div style="width: 90%; margin: 20px; margin-left: auto; margin-right: auto;" class="form-group">
 <form method="POST">
    
-<select style="text-align-last: center;" class="form-control form-control-lg" name="item_name">
+<select style="text-align-last: center;" class="form-control form-control-lg" name="item_name" id="item_name">
 {% for materiales in materiales %}
-<option style="text-align-last: center;" value="{{materiales.id}}">
+<option id="item_name2" style="text-align-last: center;" value="{{materiales.id}}">
    {{ materiales.nombre }} | ${{materiales.precio}}
 </option>
 
 {% endfor %}
 
 </select>
+
 </form>
 </div>
 
@@ -36,4 +37,11 @@
 <br>
 <br>
 <br>
+<script>
+   function contarValueMaterial (){
+      var valor=document.getElementById("item_name").value
+      console.log("hola")
+   }
+
+</script>
 {% endblock %}
