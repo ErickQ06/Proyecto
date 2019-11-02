@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+
   <style>
     body
     {
@@ -68,18 +68,136 @@
     margin-bottom: 5px;
 }
 
+//*.elementos {
+    display:inline-block;
+    padding:0px 12px;
+    margin:0px 8px;
+}
 
+@media all and (max-width: 1200px) {
+    .elementos {
+        display: inline-block;
+        padding:0px 6px;
+        margin:0px 4px;
+    }
+}
+
+  @media all and (max-width: 840px) {
+  .elementos{
+        margin:0px;
+        padding:0px;
+        padding-left:5%;
+        display:block;
+        float:none;
+        text-align:left;
+    }
+}
+
+.footer-distributed{
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+
+  padding: 45px 50px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left p{
+  color:  #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+  font-size:18px;
+  font-weight: bold;
+  color:  #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-right{
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: ##254967;
+  text-align: center;
+  line-height: 35px;
+
+  margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right{
+    text-align: center;
+  }
+
+  .footer-distributed .footer-right{
+    float: none;
+    margin: 0 auto 20px;
+  }
+
+  .footer-distributed .footer-left p.footer-links{
+    line-height: 1.8;
+  }
+}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
+
+/* In our demo, the footers are fixed to the bottom of the page */
+
+footer{
+  position: fixed;
+  bottom: 0;
+}
+
+@media (max-height:800px){
+  footer { position: static; }
+   }
 
   </style>
+
 
   
   <title>{% block title %}Inicio {% endblock %}</title>
   <link rel="shortcut icon" href="{% static 'img/icono.ico' %}" type="image/x-icon">
   <link rel="icon" href="{% static 'img/icono.ico' %}" type="image/x-icon">
+
  
 
 </head>
 <body >
+  <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   
   
 
@@ -141,6 +259,34 @@
 {% block content %}
 
 {% endblock %}
+<footer style="background-color: #254967; color: white" class="footer p-t-1">
+        <div class="container">
+            <div class="pull-right">
+                <nav class="navbar" style="background:#254967; color: white;">
+                    <nav  class="nav navbar-nav ">
+                        <a style="color: white" class="nav-item nav-link" href="/">Home</a>
+                        <a style="color: white" class="nav-item nav-link" href="{% url 'valorRecuperacion' %}">Valores de Recuperación</a>
+                        <a style="color: white" class="nav-item nav-link" href="{% url 'verMaterial' %}">Lista de Materiales</a>
+                    </nav>
+                </nav>
+            </div>
 
+            <a style="margin: 5px; color: white" href="#"><i  class="fa fa-facebook-official fa-2x"></i></a>
+            
+            <a style="margin: 5px; color: white" href="#"><i class="fa fa-twitter fa-2x"></i></a>
+            <a style="margin: 5px; color: white" href="#"><i class="fa fa-pinterest-p fa-2x"></i></a>
+            <!--<a href="#"><i class="fa fa-flickr fa-2x"></i></a>
+            <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>-->
+
+<br><br>
+            <p class="h6">
+                Todos los derechos reservados &reg;
+            </p>
+        </div>
+    </footer>
+
+    <!-- Demo ads. Please ignore and remove. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
 </body>
 </html>
