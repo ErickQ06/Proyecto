@@ -26,23 +26,16 @@
 <div style="width: 90%; margin: 20px; margin-left: auto; margin-right: auto;" class="form-group">
    <br>
       <form>
-         <label for="peso"> Ingrese el peso de su desperdicio o desecho  </label>
+         <label for="peso"> Ingrese el peso de su desperdicio o desecho (Kg)  </label>
   <input class="form-control form-control-lg" id="peso" name="peso" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo">
   <br>
   <label for="MP"> Ingrese el costo de su materia prima  </label>
   <input class="form-control form-control-lg" id="peso" name="MP" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo">
-
    </form>
 </div>
 <br>
 <br>
 <br>
 <br>
-<script>
-   function contarValueMaterial (){
-      var valor=document.getElementById("item_name").value
-      console.log("hola")
-   }
 
-</script>
 {% endblock %}
