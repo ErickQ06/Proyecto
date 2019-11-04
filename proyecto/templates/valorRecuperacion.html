@@ -2,37 +2,53 @@
 
 {% block content %}
 <title>{% block title %}Valores {% endblock %}</title>
+
 <br>
+<script>
+  function generar(){
+
+    precio = parseFloat(suma.lista1.value);
+    suma.precio.value=(precio);
+    peso= parseFloat(suma.peso.value);
+    costo= parseFloat(suma.costo.value);
+    if (peso != 0 && costo != 0) {
+      suma.sumas.value=((precio)*(peso)*(costo));
+    }
+  }
+  setInterval('generar()',1);
+
+</script>
 <h1 style="text-align: center;"><b> Cálculo de valores de recuperación y pérdidas monetarias</b></h1>
 <br>
 <h4 style="margin:20px;;">Seleccione el material que desea valorar</h4>
 {% csrf_token %}
 <div style="width: 90%; margin: 20px; margin-left: auto; margin-right: auto;" class="form-group">
-<form method="POST">
-   
-<select style="text-align-last: center;" class="form-control form-control-lg" name="item_name" id="item_name">
+<form method="POST" name="suma">
+
+<select style="text-align-last: center;" class="form-control form-control-lg" name="lista1" id="lista1">
 {% for materiales in materiales %}
-<option id="item_name2" style="text-align-last: center;" value="{{materiales.id}}">
-   {{ materiales.nombre }} | ${{materiales.precio}}
+<option value="{{materiales.precio}}">
+   {{ materiales.nombre }}
 </option>
 
 {% endfor %}
 
 </select>
+<br>
+  <label for="MP"> Precio material  </label>
+  <input readonly="" class="form-control form-control-lg" id="precio" name="precio" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo" >
+  <label for="peso"> Ingrese el peso de su desperdicio o desecho  </label>
+  <input class="form-control form-control-lg" id="peso" name="peso" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo" value="0" onclick="if(this.value=='0') this.value=''" onblur="if(this.value=='') this.value='0'" type="text">
+  <br>
+  <label for="MP"> Ingrese el costo de su materia prima  </label>
+  <input class="form-control form-control-lg" id="costo" name="costo" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo" value="0" onclick="if(this.value=='0') this.value=''" onblur="if(this.value=='') this.value='0'" type="text">
+
+  <input class="form-control form-control-lg" id="sumas" name="sumas" value="0">
+
 
 </form>
 </div>
 
-<div style="width: 90%; margin: 20px; margin-left: auto; margin-right: auto;" class="form-group">
-   <br>
-      <form>
-         <label for="peso"> Ingrese el peso de su desperdicio o desecho (Kg)  </label>
-  <input class="form-control form-control-lg" id="peso" name="peso" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo">
-  <br>
-  <label for="MP"> Ingrese el costo de su materia prima  </label>
-  <input class="form-control form-control-lg" id="peso" name="MP" type="number" min="1" pattern="^[0-9]+" title="Por favor ingrese un numero positivo">
-   </form>
-</div>
 <br>
 <br>
 <br>
