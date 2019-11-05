@@ -79,7 +79,7 @@ DATABASES = {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'NAME': 'wasteSmart',
     'USER': 'postgres',
-    'PASSWORD': 'admin123',
+    'PASSWORD': 'admin',
     'HOST': 'localhost',
     'PORT': '5432',
     }
