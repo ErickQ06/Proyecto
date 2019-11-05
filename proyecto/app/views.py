@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import*
 from django.urls import *
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 # Create your views here.
@@ -18,8 +20,7 @@ def verEmpresa(request):
 
 def valorRecuperacion(request):
 	materiales = tipoMaterial.objects.all()
-	precio = tipoMaterial.objects.all()
-	return render(request, 'valorRecuperacion.html', {'materiales': materiales, 'precio': precio,})
+	return render (request, 'valorRecuperacion.html', {'materiales': materiales,})
 
 def perdidaMonetaria(request):
 	return render(request, 'perdidaMonetaria.html')
